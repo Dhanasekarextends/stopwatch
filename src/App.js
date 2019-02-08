@@ -1,28 +1,34 @@
 import React, { Component } from 'react';
-import Value from "./components/value"
-import Keypad from "./components/keypad"
-import Start from "./components/start"
+import Value from "./components/value";
+import Keypad from "./components/keypad";
+import Start from "./components/start";
+import ScreenTwo from "./components/screentwo";
 import './App.css';
 
 class App extends Component {
 
   constructor(props){
     super(props);
-    state = ({
+    this.state = {
       screen: true,
       hrs: 0,
       min: 0,
       sec: 0
+    }
+  }
+
+  changeState=()=> {
+    this.setState({
+      screen: !this.state.screen
     })
+    console.log("state Changed")
   }
 
   render() {
     return (
       <div className="wrapper">
         <div className="container">
-         <Value />
-         <Keypad />
-         <Start />
+          {this.state.screen ? <div className="def"><Value /><Keypad /><Start changeScreen={()=>this.changeState()}/></div> : <ScreenTwo changeScreen={()=>this.changeState()}/>}
         </div>
       </div>
     );

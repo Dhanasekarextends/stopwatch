@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 
 class Value extends Component {
+
     render() {
         return(
             <div className="values-part">
@@ -11,13 +12,13 @@ class Value extends Component {
                 </div>
                 <div className="values">
                     <div className="value-div">
-                        <input type="number" maxLength="2" pattern="[0-9]{2}"></input>
+                        <input type="number" onFocus={()=>this.props.focus("hrs")} value={this.props.hrs}></input>
                     </div> : 
-                    <div className="value-div">
-                        <input type="number"></input>
+                    <div className="value-div" >
+                        <input type="number" onFocus={()=>this.props.focus("min")} value={this.props.min}/>
                     </div> : 
-                    <div className="value-div">
-                        <input type="number"></input>
+                    <div className="value-div" >
+                        <input type="number" onFocus={()=>this.props.focus("sec")} value={this.props.sec}/>
                     </div>
                 </div>
             </div>

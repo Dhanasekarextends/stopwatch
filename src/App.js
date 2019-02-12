@@ -6,6 +6,8 @@ import ScreenTwo from "./components/screentwo";
 import "./App.css";
 
 class App extends Component {
+
+  min=true;
   constructor(props) {
     super(props);
     this.state = {

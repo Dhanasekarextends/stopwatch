@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 class ScreenTwo extends Component {
-
     render() {
         return(
             <div className="def">
@@ -20,7 +19,7 @@ class ScreenTwo extends Component {
                     </div>
                 </div>
                 <div className="button-div">
-                    <div className="pause-button" onClick={this.props.changeRunningState}>Pause</div>
+                    <div className="pause-button" onClick={this.props.changeRunningState}>{this.props.text}</div>
                     <div className="stop-button" onClick={this.props.changeScreen}>Stop</div>
                 </div>
             </div>

@@ -16,7 +16,8 @@ class App extends Component {
       hrs: "00",
       min: "00",
       sec: "00",
-      ms: "00"
+      ms: "00",
+      pause: "Pause"
     };
   }
 
@@ -96,22 +97,33 @@ class App extends Component {
   };
 
   changeRunningState = () => {
+    let pause = this.state.pause;
     this.setState({
       running: !this.state.running
     });
     if(this.state.running){
       this.startTimer();
       console.log("timer started")
+      pause = "Pause";
       } else {
         this.stopTimer();
         console.log("timer stopped")
+        pause = "Start";
       }
-    console.log(this.state.running);
+    this.setState({
+      pause: pause
+    })
   };
 
   startTimer=()=>{
-    this.timerVar=setInterval(this.timer, 10);
-    console.log("check timer")
+    if(this.state.hrs!=0 || this.state.min!=0 || this.state.sec!=0){
+      this.timerVar=setInterval(this.timer, 10);
+      console.log("check timer")
+    } else {
+      this.setState({
+        screen: true
+      })
+    }
   }
 
   timer=()=>{
@@ -171,6 +183,7 @@ class App extends Component {
               min={this.state.min}
               sec={this.state.sec}
               ms={this.state.ms}
+              text={this.state.pause}
             />
           )}
         </div>

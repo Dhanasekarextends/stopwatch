@@ -16,7 +16,7 @@ class ScreenTwo extends Component {
                         <div className="values2">{this.props.hrs}</div> : 
                         <div className="values2">{this.props.min}</div> : 
                         <div className="values2">{this.props.sec}</div> : 
-                        <div className="values2">00</div>
+                        <div className="values2">{this.props.ms}0</div>
                     </div>
                 </div>
                 <div className="button-div">

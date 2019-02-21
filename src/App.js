@@ -146,6 +146,7 @@ class App extends Component {
     }
     if(hrs==0 && min==0 && sec==0){
       this.stopTimer();
+      ms="0";
       console.log("timer stopped")
     }
     this.setState({

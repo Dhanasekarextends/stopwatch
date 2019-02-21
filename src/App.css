@@ -210,3 +210,34 @@ input[type=number]::-webkit-outer-spin-button {
   cursor: pointer;
   border-radius: 4px;
 }
+
+@media only screen and (max-width:415px){
+  .container{
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .label-child {
+    font-size: 25px;
+  }
+
+  .values {
+    font-size: 55px;
+  }
+
+  .keys{
+    font-size: 25px;
+  }
+
+  .start-part{
+    font-size:200%;
+  }
+
+  .values2{
+    font-size: 38px;
+  }
+
+  .button-div{
+    font-size: 30px;
+  }
+}
